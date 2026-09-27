@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "documents": [
+    {
+      "id": "f5bacb93b9c64370406fd4d757f3c747aa1bded4",
+      "source": "data\\sample\\threat_intel.jsonl",
+      "title": "Ransomware intrusion with remote services",
+      "text": "id: CTI-001 | type: threat_report | name: Ransomware intrusion with remote services | description: A threat actor used exposed remote access, credential theft, and lateral movement before encrypting files. Review unusual RDP logons and remote service creation. | technique: T1021 | source_type: sample CTI",
+      "metadata": {
+        "id": "CTI-001",
+        "type": "threat_report",
+        "name": "Ransomware intrusion with remote services",
+        "description": "A threat actor used exposed remote access, credential theft, and lateral movement before encrypting files. Review unusual RDP logons and remote service creation.",
+        "technique": "T1021",
+        "source_type": "sample CTI"
+      }
+    },
+    {
+      "id": "9f811d62658becb6d48434449be42fcf6aeedfdf",
+      "source": "data\\sample\\threat_intel.jsonl",
+      "title": "CVE-2021-44228 exploitation note",
+      "text": "id: CTI-002 | type: threat_report | name: CVE-2021-44228 exploitation note | description: Public exploitation of CVE-2021-44228 affects vulnerable Log4j installations. Confirm product version and exposure before assessing impact. | cve: CVE-2021-44228 | technique: T1190 | source_type: sample CTI",
+      "metadata": {
+        "id": "CTI-002",
+        "type": "threat_report",
+        "name": "CVE-2021-44228 exploitation note",
+        "description": "Public exploitation of CVE-2021-44228 affects vulnerable Log4j installations. Confirm product version and exposure before assessing impact.",
+        "cve": "CVE-2021-44228",
+        "technique": "T1190",
+        "source_type": "sample CTI"
+      }
+    },
+    {
+      "id": "06886c44b7d395c81ef1c9ff858fb84551f12977",
+      "source": "data\\sample\\threat_intel.jsonl",
+      "title": "Benign scanning baseline",
+      "text": "id: CTI-003 | type: threat_report | name: Benign scanning baseline | description: Routine internal vulnerability scanning may produce repeated port probes from the approved scanner subnet. Confirm source ownership before escalation. | source_type: sample CTI",
+      "metadata": {
+        "id": "CTI-003",
+        "type": "threat_report",
+        "name": "Benign scanning baseline",
+        "description": "Routine internal vulnerability scanning may produce repeated port probes from the approved scanner subnet. Confirm source ownership before escalation.",
+        "source_type": "sample CTI"
+      }
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "f5bacb93b9c64370406fd4d757f3c747aa1bded4",
+        "label": "Ransomware intrusion with remote services",
+        "type": "threat_report",
+        "source": "data\\sample\\threat_intel.jsonl"
+      },
+      {
+        "id": "entity:t1021",
+        "label": "T1021",
+        "type": "entity",
+        "source": "extracted"
+      },
+      {
+        "id": "entity:ransomware",
+        "label": "Ransomware",
+        "type": "entity",
+        "source": "extracted"
+      },
+      {
+        "id": "entity:review",
+        "label": "Review",
+        "type": "entity",
+        "source": "extracted"
+      },
+      {
+        "id": "9f811d62658becb6d48434449be42fcf6aeedfdf",
+        "label": "CVE-2021-44228 exploitation note",
+        "type": "threat_report",
+        "source": "data\\sample\\threat_intel.jsonl"
+      },
+      {
+        "id": "entity:confirm",
+        "label": "Confirm",
+        "type": "entity",
+        "source": "extracted"
+      },
+      {
+        "id": "entity:t1190",
+        "label": "T1190",
+        "type": "entity",
+        "source": "extracted"
+      },
+      {
+        "id": "entity:public",
+        "label": "Public",
+        "type": "entity",
+        "source": "extracted"
+      },
+      {
+        "id": "entity:cve-2021-44228",
+        "label": "CVE-2021-44228",
+        "type": "entity",
+        "source": "extracted"
+      },
+      {
+        "id": "06886c44b7d395c81ef1c9ff858fb84551f12977",
+        "label": "Benign scanning baseline",
+        "type": "threat_report",
+        "source": "data\\sample\\threat_intel.jsonl"
+      },
+      {
+        "id": "entity:routine",
+        "label": "Routine",
+        "type": "entity",
+        "source": "extracted"
+      },
+      {
+        "id": "entity:benign",
+        "label": "Benign",
+        "type": "entity",
+        "source": "extracted"
+      }
+    ],
+    "edges": [
+      {
+        "source": "f5bacb93b9c64370406fd4d757f3c747aa1bded4",
+        "target": "entity:t1021",
+        "relation": "mentions"
+      },
+      {
+        "source": "f5bacb93b9c64370406fd4d757f3c747aa1bded4",
+        "target": "entity:ransomware",
+        "relation": "mentions"
+      },
+      {
+        "source": "f5bacb93b9c64370406fd4d757f3c747aa1bded4",
+        "target": "entity:review",
+        "relation": "mentions"
+      },
+      {
+        "source": "9f811d62658becb6d48434449be42fcf6aeedfdf",
+        "target": "entity:confirm",
+        "relation": "mentions"
+      },
+      {
+        "source": "9f811d62658becb6d48434449be42fcf6aeedfdf",
+        "target": "entity:t1190",
+        "relation": "mentions"
+      },
+      {
+        "source": "9f811d62658becb6d48434449be42fcf6aeedfdf",
+        "target": "entity:public",
+        "relation": "mentions"
+      },
+      {
+        "source": "9f811d62658becb6d48434449be42fcf6aeedfdf",
+        "target": "entity:cve-2021-44228",
+        "relation": "mentions"
+      },
+      {
+        "source": "06886c44b7d395c81ef1c9ff858fb84551f12977",
+        "target": "entity:confirm",
+        "relation": "mentions"
+      },
+      {
+        "source": "06886c44b7d395c81ef1c9ff858fb84551f12977",
+        "target": "entity:routine",
+        "relation": "mentions"
+      },
+      {
+        "source": "06886c44b7d395c81ef1c9ff858fb84551f12977",
+        "target": "entity:benign",
+        "relation": "mentions"
+      }
+    ]
+  }
+}

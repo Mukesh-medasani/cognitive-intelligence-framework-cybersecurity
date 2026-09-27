@@ -1,0 +1,232 @@
+{
+  "mode": "demo",
+  "results": [
+    {
+      "case_id": "case-ransomware-demo",
+      "assessment": "insufficient evidence",
+      "confidence_score": 0.37,
+      "confidence_band": "low",
+      "score_note": "Heuristic triage score for demonstration; not a calibrated probability or production detection decision.",
+      "hypothesis": "Multiple failed logons followed by remote service creation and file encryption activity. Retrieved 1 relevant record(s); current heuristic confidence is 37%. Validate the cited evidence and affected asset before taking action.",
+      "evidence": [
+        {
+          "source": "data\\sample\\threat_intel.jsonl",
+          "title": "Ransomware intrusion with remote services",
+          "excerpt": "id: CTI-001 | type: threat_report | name: Ransomware intrusion with remote services | description: A threat actor used exposed remote access, credential theft, and lateral movement before encrypting files. Review unusual RDP logons and remote service creation. | technique: T1021 | source_type: sample CTI",
+          "match_score": 16
+        }
+      ],
+      "graph_context": [
+        {
+          "source": "f5bacb93b9c64370406fd4d757f3c747aa1bded4",
+          "target": "entity:ransomware",
+          "relation": "mentions"
+        },
+        {
+          "source": "f5bacb93b9c64370406fd4d757f3c747aa1bded4",
+          "target": "entity:review",
+          "relation": "mentions"
+        },
+        {
+          "source": "f5bacb93b9c64370406fd4d757f3c747aa1bded4",
+          "target": "entity:t1021",
+          "relation": "mentions"
+        }
+      ],
+      "verification": [
+        {
+          "agent": "evidence_review",
+          "verdict": "support",
+          "detail": "Retrieved 1 relevant record(s).",
+          "evidence_ids": [
+            "f5bacb93b9c64370406fd4d757f3c747aa1bded4"
+          ]
+        },
+        {
+          "agent": "graph_consistency",
+          "verdict": "support",
+          "detail": "Found 3 knowledge graph connection(s) from retrieved records.",
+          "evidence_ids": [
+            "f5bacb93b9c64370406fd4d757f3c747aa1bded4"
+          ]
+        },
+        {
+          "agent": "threat_intel_crosscheck",
+          "verdict": "support",
+          "detail": "Threat terms overlap retrieved source material.",
+          "evidence_ids": [
+            "f5bacb93b9c64370406fd4d757f3c747aa1bded4"
+          ]
+        },
+        {
+          "agent": "hypothesis_critic",
+          "verdict": "insufficient",
+          "detail": "Evidence is insufficient for a high-confidence conclusion.",
+          "evidence_ids": [
+            "f5bacb93b9c64370406fd4d757f3c747aa1bded4"
+          ]
+        }
+      ],
+      "recommended_response": [
+        "Gather additional endpoint, network, and identity context.",
+        "Keep the event open for correlation with future evidence."
+      ],
+      "belief_update": {
+        "prior_score": 0.15,
+        "new_evidence_count": 1,
+        "contradiction_adjustment": -0.0,
+        "updated_score": 0.37
+      },
+      "belief_state": {
+        "case-ransomware-demo": {
+          "score": 0.37,
+          "evidence_ids": [
+            "f5bacb93b9c64370406fd4d757f3c747aa1bded4"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "case-log4j-demo",
+      "assessment": "insufficient evidence",
+      "confidence_score": 0.25,
+      "confidence_band": "low",
+      "score_note": "Heuristic triage score for demonstration; not a calibrated probability or production detection decision.",
+      "hypothesis": "Internet-facing Java service reports Log4j library. Retrieved 3 relevant record(s); current heuristic confidence is 25%. Validate the cited evidence and affected asset before taking action.",
+      "evidence": [
+        {
+          "source": "data\\sample\\threat_intel.jsonl",
+          "title": "CVE-2021-44228 exploitation note",
+          "excerpt": "id: CTI-002 | type: threat_report | name: CVE-2021-44228 exploitation note | description: Public exploitation of CVE-2021-44228 affects vulnerable Log4j installations. Confirm product version and exposure before assessing impact. | cve: CVE-2021-44228 | technique: T1190 | source_type: sample CTI",
+          "match_score": 9
+        },
+        {
+          "source": "data\\sample\\threat_intel.jsonl",
+          "title": "Benign scanning baseline",
+          "excerpt": "id: CTI-003 | type: threat_report | name: Benign scanning baseline | description: Routine internal vulnerability scanning may produce repeated port probes from the approved scanner subnet. Confirm source ownership before escalation. | source_type: sample CTI",
+          "match_score": 3
+        },
+        {
+          "source": "data\\sample\\threat_intel.jsonl",
+          "title": "Ransomware intrusion with remote services",
+          "excerpt": "id: CTI-001 | type: threat_report | name: Ransomware intrusion with remote services | description: A threat actor used exposed remote access, credential theft, and lateral movement before encrypting files. Review unusual RDP logons and remote service creation. | technique: T1021 | source_type: sample CTI",
+          "match_score": 3
+        }
+      ],
+      "graph_context": [
+        {
+          "source": "f5bacb93b9c64370406fd4d757f3c747aa1bded4",
+          "target": "entity:ransomware",
+          "relation": "mentions"
+        },
+        {
+          "source": "f5bacb93b9c64370406fd4d757f3c747aa1bded4",
+          "target": "entity:review",
+          "relation": "mentions"
+        },
+        {
+          "source": "f5bacb93b9c64370406fd4d757f3c747aa1bded4",
+          "target": "entity:t1021",
+          "relation": "mentions"
+        },
+        {
+          "source": "9f811d62658becb6d48434449be42fcf6aeedfdf",
+          "target": "entity:confirm",
+          "relation": "mentions"
+        },
+        {
+          "source": "9f811d62658becb6d48434449be42fcf6aeedfdf",
+          "target": "entity:public",
+          "relation": "mentions"
+        },
+        {
+          "source": "9f811d62658becb6d48434449be42fcf6aeedfdf",
+          "target": "entity:t1190",
+          "relation": "mentions"
+        },
+        {
+          "source": "9f811d62658becb6d48434449be42fcf6aeedfdf",
+          "target": "entity:cve-2021-44228",
+          "relation": "mentions"
+        },
+        {
+          "source": "06886c44b7d395c81ef1c9ff858fb84551f12977",
+          "target": "entity:confirm",
+          "relation": "mentions"
+        },
+        {
+          "source": "06886c44b7d395c81ef1c9ff858fb84551f12977",
+          "target": "entity:benign",
+          "relation": "mentions"
+        },
+        {
+          "source": "06886c44b7d395c81ef1c9ff858fb84551f12977",
+          "target": "entity:routine",
+          "relation": "mentions"
+        }
+      ],
+      "verification": [
+        {
+          "agent": "evidence_review",
+          "verdict": "support",
+          "detail": "Retrieved 3 relevant record(s).",
+          "evidence_ids": [
+            "9f811d62658becb6d48434449be42fcf6aeedfdf",
+            "06886c44b7d395c81ef1c9ff858fb84551f12977",
+            "f5bacb93b9c64370406fd4d757f3c747aa1bded4"
+          ]
+        },
+        {
+          "agent": "graph_consistency",
+          "verdict": "support",
+          "detail": "Found 10 knowledge graph connection(s) from retrieved records.",
+          "evidence_ids": [
+            "9f811d62658becb6d48434449be42fcf6aeedfdf",
+            "06886c44b7d395c81ef1c9ff858fb84551f12977",
+            "f5bacb93b9c64370406fd4d757f3c747aa1bded4"
+          ]
+        },
+        {
+          "agent": "threat_intel_crosscheck",
+          "verdict": "support",
+          "detail": "Threat terms overlap retrieved source material.",
+          "evidence_ids": [
+            "9f811d62658becb6d48434449be42fcf6aeedfdf",
+            "06886c44b7d395c81ef1c9ff858fb84551f12977",
+            "f5bacb93b9c64370406fd4d757f3c747aa1bded4"
+          ]
+        },
+        {
+          "agent": "hypothesis_critic",
+          "verdict": "insufficient",
+          "detail": "Evidence is insufficient for a high-confidence conclusion.",
+          "evidence_ids": [
+            "9f811d62658becb6d48434449be42fcf6aeedfdf",
+            "06886c44b7d395c81ef1c9ff858fb84551f12977",
+            "f5bacb93b9c64370406fd4d757f3c747aa1bded4"
+          ]
+        }
+      ],
+      "recommended_response": [
+        "Gather additional endpoint, network, and identity context.",
+        "Keep the event open for correlation with future evidence."
+      ],
+      "belief_update": {
+        "prior_score": 0.15,
+        "new_evidence_count": 3,
+        "contradiction_adjustment": -0.15,
+        "updated_score": 0.25
+      },
+      "belief_state": {
+        "case-log4j-demo": {
+          "score": 0.25,
+          "evidence_ids": [
+            "06886c44b7d395c81ef1c9ff858fb84551f12977",
+            "9f811d62658becb6d48434449be42fcf6aeedfdf",
+            "f5bacb93b9c64370406fd4d757f3c747aa1bded4"
+          ]
+        }
+      }
+    }
+  ]
+}
